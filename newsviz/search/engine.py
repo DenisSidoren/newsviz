@@ -41,7 +41,7 @@ class Ranker():
     Outputs metainformation for vectors 
     which of indexes  == `ixs`(from get_nearest)
     """
-    attrs = self.meta[ixs]
+    attrs = [self.meta[i] for i in ixs]
     return attrs
 
 
