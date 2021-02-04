@@ -30,7 +30,8 @@ class Ranker():
       self.model = NearestNeighbors(metric=metric, n_jobs=-1)
       self.model.fit(self.embs)
 
-    all_neighb = self.model.kneighbors([self.v_query], 2,
+    all_neighb = self.model.kneighbors([self.v_query],
+                                       topn,
                                        return_distance=False)
     ixs = all_neighb[0]
     return ixs
